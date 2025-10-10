@@ -1,0 +1,26 @@
+Bloom-Filter Testergebnisse
+=========================
+
+Parameter:
+- Anzahl der Daten (n): 10000
+- Fehlerwahrscheinlichkeit (p): 0.05
+- Anzahl der Hash-Funktionen (k): 2
+- Anzahl der Bits (m): 79022
+
+Testergebnisse:
+- Anzahl eingefügter Wörter: 9998
+- Anzahl Testwörter: 9994
+- Anzahl falsch positiver Ergebnisse: 606
+- Falsch positive Rate: 6.0636%
+
+Beispiele für falsch positive Ergebnisse:
+- közbejött
+- Paraæin
+- евангеліст
+- vykadiĹĽ
+- kytarový
+- nizajoč
+- innheimtubrÃ©fsins
+- inklinując
+- γαλιφιές
+- Synáčkův
