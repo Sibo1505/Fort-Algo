@@ -25,5 +25,5 @@ def main():
         else:
             print("Ungültige Eingabe! Bitte wählen Sie 1, 2 oder 3.")
 
-if __name__ == "__main__":
-    main()
+
+main()

@@ -1,17 +1,10 @@
 from api import load_language_data, get_words_for_language, get_all_words
 from Aufgabe_2 import BloomFilter
 import random
-import matplotlib.pyplot as plt
 
-def test_bloom_filter(test_size=10000, error_rate=0.05):
-    """
-    Testet den Bloom-Filter mit einer bestimmten Anzahl von Wörtern und dokumentiert
-    die falsch positiven Ergebnisse.
-    
-    Args:
-        test_size: Anzahl der Testwörter (Standard: 10000)
-        error_rate: Gewünschte Fehlerwahrscheinlichkeit (Standard: 0.05)
-    """
+# Testet den Bloom-Filter mit einer bestimmten Anzahl von Wörtern und dokumentiert
+def test_bloom_filter(test_size, error_rate):
+
     # Laden der Wörter
     print("Lade Wortdaten...")
     word_database = load_language_data()
@@ -40,7 +33,7 @@ def test_bloom_filter(test_size=10000, error_rate=0.05):
     for word in insert_words:
         bloom_filter.insert(word)
     
-    # Teste die eingefügten Wörter (sollten alle gefunden werden)
+    # Teste die eingefügten Wörter
     true_positives = sum(1 for word in insert_words if bloom_filter.search(word))
     print(f"\nTest der eingefügten Wörter:")
     print(f"Korrekt gefunden: {true_positives} von {len(insert_words)}")
@@ -59,11 +52,11 @@ def test_bloom_filter(test_size=10000, error_rate=0.05):
     print(f"Falsch positive Rate: {false_positive_rate:.4%}")
     print(f"Theoretische Fehlerrate: {error_rate:.4%}")
     
-    # Speichere die Ergebnisse in einer Datei
     save_test_results(insert_words, test_words, false_positives, bloom_filter)
 
+# Speichert die Testergebnisse in einer Datei
 def save_test_results(insert_words, test_words, false_positives, bloom_filter):
-    """Speichert die Testergebnisse in einer Datei."""
+
     n, p, k, m = bloom_filter.getParameters()
     
     with open("Abgabe_1/Ergebnisse/bloom_filter_test_results.txt", "w", encoding="utf-8") as f:

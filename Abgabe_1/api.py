@@ -3,8 +3,9 @@ import pandas as pd
 import os
 import kagglehub
 
+# Lade alle Sprachdateien und speichere die Wörter in einem Dictionary
 def load_language_data():
-    """Lädt alle Sprachdateien und gibt ein Dictionary mit den Wörtern zurück."""
+
     # Lade den Datensatz von Kaggle
     path = kagglehub.dataset_download("jacekpardyak/languages-of-europe")
     print("Datensatzpfad:", path)
@@ -35,30 +36,17 @@ def load_language_data():
 
     return all_words
 
+# Gibt die Wörter für eine bestimmte Sprache zurück.
 def get_words_for_language(all_words, language):
-    """Gibt die Wörter für eine bestimmte Sprache zurück."""
     return all_words.get(language, [])
 
+# Gibt eine Liste aller verfügbaren Sprachen zurück.
 def get_available_languages(all_words):
-    """Gibt eine Liste aller verfügbaren Sprachen zurück."""
     return list(all_words.keys())
 
+# Gibt eine Liste aller Wörter aus allen Sprachen zurück.
 def get_all_words(all_words):
-    """Gibt eine Liste aller Wörter aus allen Sprachen zurück."""
     all_word_list = []
     for words in all_words.values():
         all_word_list.extend(words)
     return all_word_list
-
-
-if __name__ == "__main__":
-    # Lade alle Sprachdaten
-    word_database = load_language_data()
-    
-    # Zeige verfügbare Sprachen
-    languages = get_available_languages(word_database)
-    print("\nVerfügbare Sprachen:", languages)
-    
-    # Lade alle Wörter
-    all_words = get_all_words(word_database)
-    print(f"\nGesamtanzahl der Wörter über alle Sprachen: {len(all_words)}") 
