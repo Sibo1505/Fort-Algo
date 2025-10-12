@@ -1,0 +1,31 @@
+Bloom-Filter Testergebnisse
+=========================
+
+Parameter:
+- Anzahl der Daten (n): 10000
+- Fehlerwahrscheinlichkeit (p): 0.05
+- Anzahl der Hash-Funktionen (k): 2
+- Anzahl der Bits (m): 79022
+
+Testergebnisse:
+- Anzahl eingefügter Wörter: 9998
+- Anzahl Testwörter: 9995
+- Anzahl falsch positiver Ergebnisse: 630
+- Falsch positive Rate: 6.3032%
+
+Beispiele für falsch positive Ergebnisse:
+- çiseliyorsa
+- argumentojmë
+- διακοινοτική
+- γαρίδες
+- верхоглядство
+- volksdemocratieÃ«n
+- postřelovávání
+- ποσοστιαίοι
+- welsprekend
+- gragalt
+- μπλοφάραμε
+- glideledd
+- intellektuell
+- улыбка
+- ukradzeniom

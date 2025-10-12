@@ -3,7 +3,7 @@ from math import ceil, log
 
 
 class BloomFilter:
-    def __init__(self, n=10000, p=0.05, k=2):
+    def __init__(self, n, p, k=2):
         self.n = n  # Anzahl der Daten
         self.p = p  # Fehlerwahrscheinlichkeit
         self.k = k  # Anzahl der Hash-Funktionen
@@ -31,10 +31,3 @@ class BloomFilter:
 
     def getParameters(self):
         return self.n, self.p, self.k, self.m
-
-bloom_filter = BloomFilter()
-print(bloom_filter.getParameters())
-
-bloom_filter.insert("Hallo")
-print(bloom_filter.search("Hallo"))  # Sollte True zurückgeben
-print(bloom_filter.search("Welt"))  # Sollte False zurückgeben

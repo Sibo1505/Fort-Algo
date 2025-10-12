@@ -61,15 +61,12 @@ def test_bloom_filter(test_size=10000, error_rate=0.05):
     
     # Speichere die Ergebnisse in einer Datei
     save_test_results(insert_words, test_words, false_positives, bloom_filter)
-    
-    # Visualisiere die Ergebnisse
-    plot_results(false_positive_rate, error_rate)
 
 def save_test_results(insert_words, test_words, false_positives, bloom_filter):
     """Speichert die Testergebnisse in einer Datei."""
     n, p, k, m = bloom_filter.getParameters()
     
-    with open("bloom_filter_test_results.txt", "w", encoding="utf-8") as f:
+    with open("Abgabe_1/Ergebnisse/bloom_filter_test_results.txt", "w", encoding="utf-8") as f:
         f.write("Bloom-Filter Testergebnisse\n")
         f.write("=========================\n\n")
         
@@ -86,28 +83,5 @@ def save_test_results(insert_words, test_words, false_positives, bloom_filter):
         f.write(f"- Falsch positive Rate: {len(false_positives)/len(test_words):.4%}\n\n")
         
         f.write("Beispiele für falsch positive Ergebnisse:\n")
-        for word in list(false_positives)[:10]:  # Zeige nur die ersten 10 Beispiele
+        for word in list(false_positives)[:15]:  # Zeige nur die ersten 15 Beispiele
             f.write(f"- {word}\n")
-
-def plot_results(actual_rate, expected_rate):
-    """Visualisiert die Testergebnisse."""
-    plt.figure(figsize=(10, 6))
-    
-    rates = ['Erwartete\nFehlerrate', 'Tatsächliche\nFehlerrate']
-    values = [expected_rate, actual_rate]
-    
-    plt.bar(rates, values)
-    plt.title('Vergleich der Fehlerraten')
-    plt.ylabel('Fehlerrate')
-    plt.ylim(0, max(expected_rate, actual_rate) * 1.2)
-    
-    # Füge Werte über den Balken hinzu
-    for i, v in enumerate(values):
-        plt.text(i, v, f'{v:.4%}', ha='center', va='bottom')
-    
-    plt.savefig('bloom_filter_results.png')
-    plt.close()
-
-if __name__ == "__main__":
-    # Teste den Bloom-Filter mit 10.000 Wörtern und 5% Fehlerwahrscheinlichkeit
-    test_bloom_filter()

@@ -18,7 +18,6 @@ def analyze_hash_functions(sample_size):
     all_words = get_all_words(word_database)
     
     # Nehme eine zufällige Stichprobe
-    print(f"\nNehme eine Stichprobe von {sample_size} Wörtern aus {len(all_words)} Wörtern...")
     sample_words = random.sample(all_words, sample_size)
     
     # Hash-Werte berechnen
@@ -31,22 +30,20 @@ def analyze_hash_functions(sample_size):
     analyze_distribution(h2_values, "h2")
     
     # Visualisierung
-    plot_hash_distribution(h1_values, h2_values)
-    
+    print("\nSoll die Verteilung visuell dargestellt werden? (j/n)")
+    if input().strip().lower() == 'j':
+        plot_hash_distribution(h1_values, h2_values)
+
     # Kollisionsanalyse
     print("\nAnalysiere Kollisionen...")
     analyze_collisions(h1_values, "h1")
     analyze_collisions(h2_values, "h2")
-    
-    # Vergleiche Kollisionen zwischen h1 und h2
-    analyze_hash_independence(h1_values, h2_values)
 
 def analyze_distribution(hash_values, hash_name):
     """Analysiert die Verteilung der Hash-Werte."""
     min_val = min(hash_values)
     max_val = max(hash_values)
     mean_val = np.mean(hash_values)
-    std_val = np.std(hash_values)
     
     print(f"\n{hash_name} Verteilungsanalyse:")
     print(f"Minimum: {min_val}")
@@ -64,16 +61,6 @@ def analyze_collisions(hash_values, hash_name):
     print(f"Eindeutige Werte: {unique_values}")
     print(f"Kollisionen: {collisions}")
     print(f"Kollisionsrate: {collisions/total_values*100:.2f}%")
-
-def analyze_hash_independence(h1_values, h2_values):
-    """Analysiert die Unabhängigkeit der beiden Hash-Funktionen."""
-    # Zähle, wie oft die gleichen Werte von beiden Funktionen erzeugt werden
-    same_values = sum(1 for h1, h2 in zip(h1_values, h2_values) if h1 == h2)
-    total_values = len(h1_values)
-    
-    print("\nUnabhängigkeitsanalyse:")
-    print(f"Gleiche Werte: {same_values}")
-    print(f"Prozent gleicher Werte: {same_values/total_values*100:.2f}%")
 
 def plot_hash_distribution(h1_values, h2_values):
     """Visualisiert die Verteilung der Hash-Werte."""
