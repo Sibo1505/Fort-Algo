@@ -37,11 +37,40 @@ Dieses Repository enthält die Lösungen zu den Programmieraufgaben des Kurses "
 
 **Status: ✅ Abgeschlossen** - Siehe Ordner `Abgabe_2/`
 
-### Programmieraufgabe 3
+### Programmieraufgabe 3 - Kürzeste/Schnellste/Energieeffizienteste Wege
 
-**Details folgen**
+**Multi-Kriterien Routing-Algorithmus**
 
-**Status: ⏳ Noch nicht verfügbar**
+- Implementierung eines Algorithmus für kürzeste (d), schnellste (t) und energieeffizienteste (e) Wege
+- Reales Szenario mit mindestens 30 Knoten
+- Freie Wahl von Start- und Endknoten
+- Dreiecksungleichung gilt für alle Berechnungen
+
+**Kantentypen und Parameter:**
+
+- **Dorfstraße**: 50 km/h, 6l/100km, Faktor 1.4 für Kurvigkeit
+- **Landstraße**: 80 km/h, 7l/100km
+- **Autobahn**: 130 km/h, 9l/100km
+
+**Funktionale Anforderungen:**
+
+- Verschiedene Geschwindigkeiten je Kantentyp
+- Verschiedene Kraftstoffverbräuche je Kantentyp
+- Test-Fälle mit unterschiedlichen optimalen Wegen für d, t, e
+- Luftlinie als Basis für nicht definierte Kanten
+
+**Nicht-funktionale Anforderungen:**
+
+- Ansehnliche Visualisierung der berechneten Routen
+- Gut strukturierter, modularer Code
+- Interaktive Auswahl von Start/Ziel-Knoten
+
+**Referenz-Daten:**
+
+- Schleswig-Holstein Straßennetz (Flensburg ↔ Neumünster: ~98km ≈ 980px)
+- Skalierung: 1km ≈ 10px Luftlinie
+
+**Status: 🔄 In Bearbeitung**
 
 ### Programmieraufgabe 4
 
