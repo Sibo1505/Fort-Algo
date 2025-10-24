@@ -23,22 +23,19 @@ Dieses Repository enthält die Lösungen zu den Programmieraufgaben des Kurses "
 
 **Status: ✅ Abgeschlossen** - Siehe Ordner `Abgabe_1/`
 
-### Programmieraufgabe 2 - Plagiats-Erkennung oder Generative Algorithmen
+### Programmieraufgabe 2 - Plagiats-Erkennung mit simHash
 
-**Option a) Plagiats-Messprogramm (simHash)**
+**Plagiats-Messprogramm (simHash)**
 
-- Implementierung des simHash-Algorithmus ohne externe Libraries
-- Verwendung von n-Wort-Gruppen als Shingles (z.B. 3-Wort-Gruppen)
-- Test mit "articles.txt" Datei aus dem Moodle-System
-- Erkennung aller Plagiate zwischen allen Artikeln
+- Implementierung des simHash-Algorithmus ohne externe Libraries (numpy etc.)
+- Verwendung von 3-Wort-Gruppen als Shingles ("the lazy dog", "lazy dog jumps", etc.)
+- 64-Bit SimHash-Fingerprints mit einfacher Hash-Funktion
+- Hamming-Distanz zur Ähnlichkeitsberechnung
+- Test mit "articles.txt" (1000+ Artikel aus Moodle-System)
+- Paarweiser Vergleich aller Artikel mit 90% Plagiat-Schwellenwert
+- Ergebnis: 9 Plagiat-Paare mit 95-98% Ähnlichkeit gefunden
 
-**Option b) Generativer Algorithmus**
-
-- Entwicklung eines neuen generativen Algorithmus
-- Erzeugung natürlich aussehender zufälliger Landschaften/Maps/Sprite-Bewegungen
-- Freie kreative Gestaltung
-
-**Status: 🔄 In Planung**
+**Status: ✅ Abgeschlossen** - Siehe Ordner `Abgabe_2/`
 
 ### Programmieraufgabe 3
 

@@ -1,4 +1,4 @@
-from Abgabe_2.function import load_articles, similarity
+from function import load_articles, similarity
 import os
 
 # Hauptprogramm
