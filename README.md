@@ -61,7 +61,7 @@ Dieses Repository enthält die Lösungen zu den Programmieraufgaben des Kurses "
 - Dreiecksungleichung für alle Distanzberechnungen
 - Unterschiedliche optimale Wege je nach Kriterium (Distanz vs. Zeit vs. Verbrauch)
 
-**Status: ✅ Abgeschlossen** - Siehe Ordner `Abgabe_3/`
+**Status: 🔄 In Bearbeitung** - Siehe Ordner `Abgabe_3/`
 
 ### Programmieraufgabe 4 - GeoHash-Algorithmus
 
