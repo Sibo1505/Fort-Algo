@@ -39,41 +39,50 @@ Dieses Repository enthält die Lösungen zu den Programmieraufgaben des Kurses "
 
 ### Programmieraufgabe 3 - Kürzeste/Schnellste/Energieeffizienteste Wege
 
-**Multi-Kriterien Routing-Algorithmus**
+**Web-basierter Multi-Kriterien Routing-Algorithmus für Schleswig-Holstein**
 
-- Implementierung eines Algorithmus für kürzeste (d), schnellste (t) und energieeffizienteste (e) Wege
-- Reales Szenario mit mindestens 30 Knoten
-- Freie Wahl von Start- und Endknoten
-- Dreiecksungleichung gilt für alle Berechnungen
+- **PHP-Web-Anwendung** mit interaktiver Kartendarstellung
+- Implementierung von Algorithmen für kürzeste (d), schnellste (t) und energieeffizienteste (e) Wege
+- **30+ Städte in Schleswig-Holstein** als reales Straßennetz-Szenario
+- Interaktive Auswahl von Start- und Zielknoten über Kartenklicks
+- Visuelle Darstellung der berechneten Routen auf Schleswig-Holstein Karte
 
-**Kantentypen und Parameter:**
+**Implementierte Kantentypen:**
 
-- **Dorfstraße**: 50 km/h, 6l/100km, Faktor 1.4 für Kurvigkeit
+- **Dorfstraße**: 50 km/h, 6l/100km, Kurvigkeitsfaktor 1.4
 - **Landstraße**: 80 km/h, 7l/100km
 - **Autobahn**: 130 km/h, 9l/100km
 
-**Funktionale Anforderungen:**
+**Technische Features:**
 
-- Verschiedene Geschwindigkeiten je Kantentyp
-- Verschiedene Kraftstoffverbräuche je Kantentyp
-- Test-Fälle mit unterschiedlichen optimalen Wegen für d, t, e
-- Luftlinie als Basis für nicht definierte Kanten
+- Web-Interface mit Kartengrafik (`sh.png`)
+- Städte-Datenbank mit Pixel-Koordinaten für Visualisierung
+- Skalierung: 1km ≈ 10px (Flensburg ↔ Neumünster: ~98km ≈ 980px)
+- Dreiecksungleichung für alle Distanzberechnungen
+- Unterschiedliche optimale Wege je nach Kriterium (Distanz vs. Zeit vs. Verbrauch)
 
-**Nicht-funktionale Anforderungen:**
+**Status: ✅ Abgeschlossen** - Siehe Ordner `Abgabe_3/`
 
-- Ansehnliche Visualisierung der berechneten Routen
-- Gut strukturierter, modularer Code
-- Interaktive Auswahl von Start/Ziel-Knoten
+### Programmieraufgabe 4 - GeoHash-Algorithmus
 
-**Referenz-Daten:**
+**Räumliche Indexierung mit alternativen Kodierungsschemata**
 
-- Schleswig-Holstein Straßennetz (Flensburg ↔ Neumünster: ~98km ≈ 980px)
-- Skalierung: 1km ≈ 10px Luftlinie
+- Implementierung des GeoHash-Algorithmus für geografische Koordinaten
+- Drei verschiedene Kodierungsschemata statt Standard-Base32:
+  - **Base16** (Hexadezimal, 4 Bits/Zeichen)
+  - **Base64** (Standard, 6 Bits/Zeichen)
+  - **Custom** (32-Zeichen ohne verwechselbare Zeichen, 5 Bits/Zeichen)
+- Nachbar-Algorithmus für räumliche Nachbarschaftssuche
+- Interaktives Menü-System für Demonstrationen
+- Praktisches Restaurant-Beispiel mit HAW Kiel Koordinaten
+- Umfassende Test-Suite mit 12 Unit-Tests
+- Vollständige API-Dokumentation und Präzisions-Analyse
 
-**Status: 🔄 In Bearbeitung**
+**Funktionale Highlights:**
 
-### Programmieraufgabe 4
+- Kodierung/Dekodierung geografischer Koordinaten
+- Berechnung aller 8 Nachbar-GeoHashes für Umgebungssuche
+- Fehlerbereich-Berechnung für Präzisions-Analyse
+- Location-Based Services Demonstration
 
-**Details folgen**
-
-**Status: ⏳ Noch nicht verfügbar**
+**Status: ✅ Abgeschlossen** - Siehe Ordner `Abgabe_4/`
